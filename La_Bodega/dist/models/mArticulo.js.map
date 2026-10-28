@@ -1,0 +1,1 @@
+{"version":3,"file":"mArticulo.js","sourceRoot":"","sources":["../../src/models/mArticulo.ts"],"names":[],"mappings":"AACA,MAAM,CAAC,OAAO,OAAO,SAAS;IACpB,KAAK,CAAS;IAEtB,YAAY,KAAa;QACvB,IAAI,CAAC,KAAK,GAAG,MAAM,CAAC,KAAK,CAAC,CAAC;IAC7B,CAAC;IAED,gBAAgB;QACd,OAAO,IAAI,CAAC,KAAK,GAAG,GAAG,CAAC;IAC1B,CAAC;CACF"}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Bodega - Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="app-bootstrap" class="container mt-5">
+    <h2>La Bodega (Bootstrap)</h2>
+    <button type="button" class="btn btn-primary" id="body_btNuevoArticulo">Nuevo Artículo</button>
+    <hr>
+    <div class="alert alert-info">
+      La ganancia será Bs. <span id="body_lblGanancia" class="fw-bold">0</span>
+    </div>
+  </div>
+
+  <div class="modal fade" id="articulo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Procesar Artículo</h5>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Costo:</label>
+          <input type="number" class="form-control" id="articulo_inCosto" placeholder="Ej: 10">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="articulo_btCancelar">Cancelar</button>
+          <button type="button" class="btn btn-success" id="articulo_btAceptar">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="module">
+    import cBodega from "./dist/controllers/cBodega.js";
+    import cArticulo from "./dist/controllers/cArticulo.js";
+
+    import vBodegaBootstrap from "./dist/views/vBodegaBootstrap.js";
+    import vArticuloBootstrap from "./dist/views/vArticuloBootstrap.js";
+
+    const vistaBodega = new vBodegaBootstrap();
+    const vistaArticulo = new vArticuloBootstrap();
+
+    const controladorArticulo = new cArticulo(vistaArticulo);
+    new cBodega(vistaBodega, controladorArticulo);
+  </script>
+</body>
+
+</html>

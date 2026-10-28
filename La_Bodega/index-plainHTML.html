@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Bodega - HTML Plano</title>
+</head>
+
+<body>
+
+  <section id="body">
+    <h2>La Bodega (HTML Plano)</h2>
+    <button id="body_btNuevoArticulo">Nuevo artículo</button>
+    <hr>
+    <div>
+      La ganancia será Bs. <span id="body_lblGanancia">0</span>
+    </div>
+  </section>
+
+  <section id="articulo" hidden style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; width: 300px;">
+    <h5 id="articulo_lblArticulo">Procesar Artículo</h5>
+    <div>
+      <label>Costo:
+        <input type="number" id="articulo_inCosto" placeholder="Ej: 10">
+      </label>
+    </div>
+    <br>
+    <button id="articulo_btCancelar">Cancelar</button>
+    <button id="articulo_btAceptar">Aceptar</button>
+  </section>
+
+  <script type="module">
+    import cBodega from "./dist/controllers/cBodega.js";
+    import cArticulo from "./dist/controllers/cArticulo.js";
+
+    import vBodegaPlain from "./dist/views/vBodegaPlain.js";
+    import vArticuloPlain from "./dist/views/vArticuloPlain.js";
+
+    const vistaBodega = new vBodegaPlain();
+    const vistaArticulo = new vArticuloPlain();
+
+    const controladorArticulo = new cArticulo(vistaArticulo);
+    new cBodega(vistaBodega, controladorArticulo);
+  </script>
+</body>
+
+</html>
