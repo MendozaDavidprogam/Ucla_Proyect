@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empleado Empresa - HTML Plano</title>
+</head>
+
+<body>
+
+  <section id="body">
+    <h2>Empleado Empresa (HTML Plano)</h2>
+    <button id="body_btNuevoEmpleado">Nuevo empleado</button>
+    <hr>
+    <div>Cantidad de hombres que trabajan en la empresa: <span id="body_lblCantidadHombres">0</span></div>
+    <div>Porcentaje de mujeres que trabajan en la empresa: <span id="body_lblPorcentajeMujeres">0</span>%</div>
+  </section>
+
+  <section id="empleado" hidden style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; width: 320px;">
+    <h5>Procesar Empleado</h5>
+    <div>
+      <label>Nombre:
+        <input type="text" id="empleado_inNombre" placeholder="Ej: Mary">
+      </label>
+    </div>
+    <div>
+      <label>Sexo:
+        <select id="empleado_inSexo">
+          <option value="M">Masculino (M)</option>
+          <option value="F">Femenino (F)</option>
+        </select>
+      </label>
+    </div>
+    <br>
+    <button id="empleado_btCancelar">Cancelar</button>
+    <button id="empleado_btAceptar">Aceptar</button>
+  </section>
+
+  <script type="module">
+    import cEmpresa from "./dist/controllers/cEmpresa.js";
+    import cEmpleado from "./dist/controllers/cEmpleado.js";
+
+    import vEmpresaPlain from "./dist/views/vEmpresaPlain.js";
+    import vEmpleadoPlain from "./dist/views/vEmpleadoPlain.js";
+
+    const vistaEmpresa = new vEmpresaPlain();
+    const vistaEmpleado = new vEmpleadoPlain();
+
+    const controladorEmpleado = new cEmpleado(vistaEmpleado);
+    new cEmpresa(vistaEmpresa, controladorEmpleado);
+  </script>
+</body>
+
+</html>

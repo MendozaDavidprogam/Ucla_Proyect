@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empleado Empresa - Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="app-bootstrap" class="container mt-5">
+    <h2>Empleado Empresa (Bootstrap)</h2>
+    <button type="button" class="btn btn-primary" id="body_btNuevoEmpleado">Nuevo Empleado</button>
+    <hr>
+    <div class="alert alert-info">
+      <div>Cantidad de hombres que trabajan en la empresa: <span id="body_lblCantidadHombres" class="fw-bold">0</span></div>
+      <div>Porcentaje de mujeres que trabajan en la empresa: <span id="body_lblPorcentajeMujeres" class="fw-bold">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="empleado" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Procesar Empleado</h5>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="empleado_inNombre" placeholder="Ej: Mary">
+          <label class="form-label mt-2">Sexo:</label>
+          <select class="form-select" id="empleado_inSexo">
+            <option value="M">Masculino (M)</option>
+            <option value="F">Femenino (F)</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="empleado_btCancelar">Cancelar</button>
+          <button type="button" class="btn btn-success" id="empleado_btAceptar">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="module">
+    import cEmpresa from "./dist/controllers/cEmpresa.js";
+    import cEmpleado from "./dist/controllers/cEmpleado.js";
+
+    import vEmpresaBootstrap from "./dist/views/vEmpresaBootstrap.js";
+    import vEmpleadoBootstrap from "./dist/views/vEmpleadoBootstrap.js";
+
+    const vistaEmpresa = new vEmpresaBootstrap();
+    const vistaEmpleado = new vEmpleadoBootstrap();
+
+    const controladorEmpleado = new cEmpleado(vistaEmpleado);
+    new cEmpresa(vistaEmpresa, controladorEmpleado);
+  </script>
+</body>
+
+</html>
