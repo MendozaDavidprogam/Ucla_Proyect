@@ -1,6 +1,6 @@
 import { iEmpleado } from "../interfaces/iEmpleado.js";
 
-declare const bootstrap: any; // Bootstrap se carga por CDN en el HTML
+declare const bootstrap: any;
 
 export default class vEmpleadoBootstrap implements iEmpleado {
   private vista: any;

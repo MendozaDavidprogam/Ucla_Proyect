@@ -1,4 +1,3 @@
-
 export default interface iArticulo {
   mostrar(): void;
   ocultar(): void;

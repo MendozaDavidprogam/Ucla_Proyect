@@ -2,7 +2,7 @@ export default class mEmpleado {
   private _nombre: string = "";
   private _sexo: string = "";
 
-  constructor({ nombre, sexo }: { nombre: string; sexo: string }) {
+  constructor({ nombre, sexo }: { nombre: string; sexo: string; }) {
     this.nombre = nombre;
     this.sexo = sexo;
   }

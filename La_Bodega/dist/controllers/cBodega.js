@@ -9,6 +9,7 @@ export default class cBodega {
         this.modelo = new mBodega();
         this.vista.alNuevoArticulo(() => this.nuevoArticulo());
         this.vista.mostrarGanancia(this.modelo.obtenerGananciaTotal());
+        this.vista.mostrarCantidad(this.modelo.obtenerCantidadArticulos());
     }
     nuevoArticulo() {
         this.controladorArticulo.solicitarArticulo((articulo) => {
@@ -16,6 +17,7 @@ export default class cBodega {
                 return;
             this.modelo.procesarArticulo(articulo);
             this.vista.mostrarGanancia(this.modelo.obtenerGananciaTotal());
+            this.vista.mostrarCantidad(this.modelo.obtenerCantidadArticulos());
         });
     }
 }

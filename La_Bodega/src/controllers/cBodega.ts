@@ -15,6 +15,7 @@ export default class cBodega {
 
     this.vista.alNuevoArticulo(() => this.nuevoArticulo());
     this.vista.mostrarGanancia(this.modelo.obtenerGananciaTotal());
+    this.vista.mostrarCantidad(this.modelo.obtenerCantidadArticulos());
   }
 
   private nuevoArticulo(): void {
@@ -22,6 +23,7 @@ export default class cBodega {
       if (articulo === null) return;
       this.modelo.procesarArticulo(articulo);
       this.vista.mostrarGanancia(this.modelo.obtenerGananciaTotal());
+      this.vista.mostrarCantidad(this.modelo.obtenerCantidadArticulos());
     });
   }
 }

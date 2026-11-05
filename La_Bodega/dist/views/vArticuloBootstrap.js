@@ -18,10 +18,14 @@ export default class vArticuloBootstrap {
     }
     limpiar() {
         this.inCosto.value = "";
+        //this.inNombre.value = "";
     }
     obtenerCosto() {
         return this.inCosto.value;
     }
+    /*obtenerNombre(): string {
+      return this.inNombre.value;
+    }*/
     mostrarError(mensaje) {
         alert(mensaje);
     }

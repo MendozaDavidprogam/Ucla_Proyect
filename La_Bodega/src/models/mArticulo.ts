@@ -1,6 +1,6 @@
 
 export default class mArticulo {
-  private costo: number;
+  private _costo: number = 0;
 
   constructor(costo: number) {
     this.costo = Number(costo);
@@ -9,4 +9,14 @@ export default class mArticulo {
   calcularGanancia(): number {
     return this.costo * 0.5;
   }
+
+  
+  set costo(v : number) {
+    this._costo = Number(v);
+  }
+
+  get costo(): number {
+    return this._costo;
+  }
+  
 }
