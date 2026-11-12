@@ -5,6 +5,7 @@ export default class vTrabajadorBootstrap implements iTrabajador {
   private inNombre: HTMLInputElement;
   private inHRegular: HTMLInputElement;
   private inHExtra: HTMLInputElement;
+  private inBonoFijo: HTMLInputElement;
   private btCancelar: HTMLButtonElement;
   private btAceptar: HTMLButtonElement;
   private modal: any;
@@ -14,6 +15,7 @@ export default class vTrabajadorBootstrap implements iTrabajador {
     this.inNombre = document.getElementById("trabajador_inNombre") as HTMLInputElement;
     this.inHRegular = document.getElementById("trabajador_inHRegular") as HTMLInputElement;
     this.inHExtra = document.getElementById("trabajador_inHExtra") as HTMLInputElement;
+    this.inBonoFijo = document.getElementById("trabajador_inBonoFijo") as HTMLInputElement;
     this.btCancelar = document.getElementById("trabajador_btCancelar") as HTMLButtonElement;
     this.btAceptar = document.getElementById("trabajador_btAceptar") as HTMLButtonElement;
     const elementoModal = document.getElementById("trabajador");
@@ -29,6 +31,10 @@ export default class vTrabajadorBootstrap implements iTrabajador {
   }
   get hExtra(): number {
     return this.inHExtra ? +this.inHExtra.value : 0;
+  }
+
+  get bonoFijo():number{
+    return this.inBonoFijo ? +this.inBonoFijo.value: 0;
   }
 
   reportar({ nombre, salario }: { nombre: string; salario: number }): void {
@@ -54,6 +60,7 @@ export default class vTrabajadorBootstrap implements iTrabajador {
     this.inNombre.value = "";
     this.inHRegular.value = "";
     this.inHExtra.value = "";
+    this.inBonoFijo.value= "";
     this.modal.show();
   }
 

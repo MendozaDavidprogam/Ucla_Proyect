@@ -2,21 +2,28 @@ export default class mTrabajador {
   private _nombre: string = "";
   private _hRegular: number = 0;
   private _hExtra: number = 0;
+  private _bonoFijo: number = 0;
 
   constructor({
     nombre,
     hRegular,
-    hExtra
+    hExtra,
+    bonoFijo
   }: {
     nombre: string;
     hRegular: number;
     hExtra: number;
+    bonoFijo: number
     
   }) {
     this.nombre = nombre;
     this.hRegular = hRegular;
     this.hExtra = hExtra;
+    this.bonoFijo = bonoFijo
   }
+  
+  set bonoFijo(bonoFijo:number){this._bonoFijo = +bonoFijo}
+  get bonoFijo():number{return this._bonoFijo}
 
   set nombre(nombre: string) {this._nombre = nombre.trim();}
   get nombre(): string {return this._nombre;}

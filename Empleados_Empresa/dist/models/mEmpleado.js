@@ -1,9 +1,11 @@
 export default class mEmpleado {
     _nombre = "";
     _sexo = "";
-    constructor({ nombre, sexo }) {
+    _sueldo = 0;
+    constructor({ nombre, sexo, sueldo }) {
         this.nombre = nombre;
         this.sexo = sexo;
+        this.sueldo = sueldo;
     }
     set nombre(valor) {
         this._nombre = valor.trim();
@@ -17,11 +19,20 @@ export default class mEmpleado {
     get sexo() {
         return this._sexo;
     }
+    set sueldo(valor) {
+        this._sueldo = +valor;
+    }
+    get sueldo() {
+        return this._sueldo;
+    }
     devolverNombre() {
         return this.nombre;
     }
     devolverSexo() {
         return this.sexo;
+    }
+    devolverSueldo() {
+        return this.sueldo;
     }
 }
 //# sourceMappingURL=mEmpleado.js.map

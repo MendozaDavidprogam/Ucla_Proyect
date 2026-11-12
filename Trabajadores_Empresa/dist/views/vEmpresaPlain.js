@@ -1,21 +1,20 @@
 export default class vEmpresaPlain {
     lblMontoNomina;
+    lblBonoFijo;
     btNuevoTrabajador;
     vista;
     constructor() {
         this.vista = document.getElementById("body");
         this.btNuevoTrabajador = document.getElementById("body_btNuevoTrabajador");
         this.lblMontoNomina = document.getElementById("body_lblMontoNomina");
+        this.lblBonoFijo = document.getElementById("body_lblBonoFijo");
     }
     onNuevoTrabajador(callback) {
         this.btNuevoTrabajador.onclick = callback;
     }
-    reportar({ montoNomina }) {
-        this.lblMontoNomina.textContent = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-            minimumFractionDigits: 2,
-        }).format(montoNomina);
+    reportar({ montoNomina, bonoFijo }) {
+        this.lblMontoNomina.textContent = `${montoNomina}`;
+        this.lblBonoFijo.textContent = `${bonoFijo}`;
     }
     mostrar() {
         if (this.vista === null)

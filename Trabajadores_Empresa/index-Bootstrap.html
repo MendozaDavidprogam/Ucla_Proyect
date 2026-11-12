@@ -16,6 +16,7 @@
     <hr>
     <div class="alert alert-success">
       <div>El monto total de nómina pagada es: <span id="body_lblMontoNomina" class="fw-bold">$0.00</span></div>
+      <div>El monto total de bonos pagados es: <span id="body_lblBonoFijo" class="fw-bold">$0.00</span></div>
       <div id="body_reportesTrabajadores"></div>
     </div>
   </div>
@@ -27,12 +28,14 @@
           <h5 class="modal-title">Procesar Trabajador</h5>
         </div>
         <div class="modal-body">
-          <label class="form-label">Nombre:</label>
+          <label class="form-label" for="trabajador_inNombre">Nombre:</label>
           <input type="text" class="form-control" id="trabajador_inNombre">
-          <label class="form-label">Horas regulares:</label>
+          <label class="form-label mt-2" for="trabajador_inHRegular">Horas regulares:</label>
           <input type="number" class="form-control" id="trabajador_inHRegular" min="0" step="0.5">
-          <label class="form-label">Horas extras:</label>
+          <label class="form-label mt-2" for="trabajador_inHExtra">Horas extras:</label>
           <input type="number" class="form-control" id="trabajador_inHExtra" min="0" step="0.5">
+          <label class="form-label mt-2" for="trabajador_inBonoFijo">Bono fijo:</label>
+          <input type="number" class="form-control" id="trabajador_inBonoFijo" min="0" step="0.5">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="trabajador_btCancelar">Cancelar</button>
@@ -48,15 +51,12 @@
     import cEmpresa from "./dist/controllers/cEmpresa.js";
     import cTrabajador from "./dist/controllers/cTrabajador.js";
 
-    // Importamos SOLO las vistas de Bootstrap
     import vEmpresaBootstrap from "./dist/views/vEmpresaBootstrap.js";
     import vTrabajadorBootstrap from "./dist/views/vTrabajadorBootstrap.js";
 
-    // 1. Instanciamos las vistas
     const vistaEmpresa = new vEmpresaBootstrap();
     const vistaTrabajador = new vTrabajadorBootstrap();
 
-    // 2. Inyectamos las vistas en los mismos controladores
     const controladorTrabajador = new cTrabajador(vistaTrabajador);
     new cEmpresa(vistaEmpresa, controladorTrabajador);
   </script>

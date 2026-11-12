@@ -4,6 +4,7 @@ export default class vTrabajadorPlain implements iTrabajador {
   private inNombre: HTMLInputElement;
   private inHRegular: HTMLInputElement;
   private inHExtra: HTMLInputElement;
+  private inBonoFijo: HTMLInputElement;
   private btCancelar: HTMLButtonElement;
   private btAceptar: HTMLButtonElement;
   private vista: HTMLElement;
@@ -17,6 +18,7 @@ export default class vTrabajadorPlain implements iTrabajador {
     this.btCancelar = document.getElementById("trabajador_btCancelar") as HTMLButtonElement;
     this.btAceptar = document.getElementById("trabajador_btAceptar") as HTMLButtonElement;
     this.reportes = document.getElementById("body_reportesTrabajadores") as HTMLElement;
+    this.inBonoFijo = document.getElementById("trabajador_inBonoFijo") as HTMLInputElement;
   }
 
   get nombre(): string {
@@ -27,6 +29,9 @@ export default class vTrabajadorPlain implements iTrabajador {
   }
   get hExtra(): number {
     return this.inHExtra ? +this.inHExtra.value : 0;
+  }
+  get bonoFijo():number{
+    return this.inBonoFijo ? +this.inBonoFijo.value: 0;
   }
 
   reportar({ nombre, salario }: { nombre: string; salario: number }): void {
@@ -53,6 +58,7 @@ export default class vTrabajadorPlain implements iTrabajador {
     this.inNombre.value = "";
     this.inHRegular.value = "";
     this.inHExtra.value = "";
+    this.inBonoFijo.value = "";
     this.vista.hidden = false;
   }
 

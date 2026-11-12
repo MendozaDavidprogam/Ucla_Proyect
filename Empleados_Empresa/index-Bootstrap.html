@@ -17,6 +17,7 @@
     <div class="alert alert-info">
       <div>Cantidad de hombres que trabajan en la empresa: <span id="body_lblCantidadHombres" class="fw-bold">0</span></div>
       <div>Porcentaje de mujeres que trabajan en la empresa: <span id="body_lblPorcentajeMujeres" class="fw-bold">0</span>%</div>
+      <div>Total de sueldos: <span id="body_lblTotalSueldos" class="fw-bold">0</span></div>
     </div>
   </div>
 
@@ -27,13 +28,15 @@
           <h5 class="modal-title">Procesar Empleado</h5>
         </div>
         <div class="modal-body">
-          <label class="form-label">Nombre:</label>
+          <label class="form-label" for="empleado_inNombre">Nombre:</label>
           <input type="text" class="form-control" id="empleado_inNombre" placeholder="Ej: Mary">
-          <label class="form-label mt-2">Sexo:</label>
+          <label class="form-label mt-2" for="empleado_inSexo">Sexo:</label>
           <select class="form-select" id="empleado_inSexo">
             <option value="M">Masculino (M)</option>
             <option value="F">Femenino (F)</option>
           </select>
+          <label class="form-label mt-2" for="empleado_inSueldo">Sueldo:</label>
+          <input type="number" class="form-control" id="empleado_inSueldo" placeholder="Ej: 1000">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="empleado_btCancelar">Cancelar</button>

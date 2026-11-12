@@ -4,8 +4,10 @@ export interface iEmpresa {
   reportar({
     cantidadHombres,
     porcentajeMujeres,
+    totalSueldos,
   }: {
     cantidadHombres: number;
     porcentajeMujeres: number;
+    totalSueldos: number;
   }): void;
 }

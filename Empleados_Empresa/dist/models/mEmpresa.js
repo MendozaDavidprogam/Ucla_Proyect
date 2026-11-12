@@ -1,9 +1,11 @@
 export default class mEmpresa {
     contHombres = 0;
     contMujeres = 0;
+    acumSueldos = 0;
     constructor() {
         this.contHombres = 0;
         this.contMujeres = 0;
+        this.acumSueldos = 0;
     }
     procesarEmpleado(empleado) {
         if (empleado.devolverSexo() === "M") {
@@ -12,12 +14,16 @@ export default class mEmpresa {
         else if (empleado.devolverSexo() === "F") {
             this.contMujeres++;
         }
+        this.acumSueldos += empleado.devolverSueldo();
     }
     devolverCantidadHombres() {
         return this.contHombres;
     }
     devolverTotalEmpleados() {
         return this.contHombres + this.contMujeres;
+    }
+    devolverTotalSueldos() {
+        return Math.round(this.acumSueldos * 100) / 100;
     }
     calcularPorcentajeMujeres() {
         if (this.devolverTotalEmpleados() === 0)

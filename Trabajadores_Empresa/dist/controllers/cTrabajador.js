@@ -23,6 +23,7 @@ export default class cTrabajador {
         const nombre = this.vista.nombre.trim();
         const hRegular = this.vista.hRegular;
         const hExtra = this.vista.hExtra;
+        const bonoFijo = this.vista.bonoFijo;
         if (!nombre) {
             alert("Ingrese el nombre del trabajador.");
             return;
@@ -31,7 +32,7 @@ export default class cTrabajador {
             alert("Las horas deben ser números iguales o mayores que cero.");
             return;
         }
-        const trabajador = new mTrabajador({ nombre, hRegular, hExtra });
+        const trabajador = new mTrabajador({ nombre, hRegular, hExtra, bonoFijo });
         this.vista.reportar({
             nombre: trabajador.nombre,
             salario: trabajador.calcularSalario(),

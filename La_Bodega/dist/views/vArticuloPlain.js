@@ -1,13 +1,11 @@
 export default class vArticuloPlain {
     seccion;
     inCosto;
-    //private inNombre: HTMLInputElement;
     btCancelar;
     btAceptar;
     constructor() {
         this.seccion = document.getElementById("articulo");
         this.inCosto = document.getElementById("articulo_inCosto");
-        //this.inNombre = document.getElementById("articulo_inNombre") as HTMLInputElement;
         this.btCancelar = document.getElementById("articulo_btCancelar");
         this.btAceptar = document.getElementById("articulo_btAceptar");
     }
@@ -20,14 +18,10 @@ export default class vArticuloPlain {
     }
     limpiar() {
         this.inCosto.value = "";
-        //this.inNombre.value = "";
     }
     obtenerCosto() {
         return this.inCosto.value;
     }
-    /*obtenerNombre(): string {
-      return this.inNombre.value;
-    }*/
     mostrarError(mensaje) {
         alert(mensaje);
     }

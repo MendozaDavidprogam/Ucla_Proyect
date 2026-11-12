@@ -21,6 +21,7 @@ export default class cEmpresa {
         this.vEmpresa.reportar({
           cantidadHombres: this.mEmpresa.devolverCantidadHombres(),
           porcentajeMujeres: this.mEmpresa.calcularPorcentajeMujeres(),
+          totalSueldos: this.mEmpresa.devolverTotalSueldos(),
         });
       }
     });

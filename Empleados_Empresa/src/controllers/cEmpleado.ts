@@ -20,6 +20,7 @@ export default class cEmpleado {
     const instancia = new mEmpleado({
       nombre: this.vista.nombre,
       sexo: this.vista.sexo,
+      sueldo: this.vista.sueldo
     });
     this.vista.ocultar();
     this.callback(instancia);

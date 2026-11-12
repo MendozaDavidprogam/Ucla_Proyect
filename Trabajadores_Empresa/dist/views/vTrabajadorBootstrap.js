@@ -2,6 +2,7 @@ export default class vTrabajadorBootstrap {
     inNombre;
     inHRegular;
     inHExtra;
+    inBonoFijo;
     btCancelar;
     btAceptar;
     modal;
@@ -10,6 +11,7 @@ export default class vTrabajadorBootstrap {
         this.inNombre = document.getElementById("trabajador_inNombre");
         this.inHRegular = document.getElementById("trabajador_inHRegular");
         this.inHExtra = document.getElementById("trabajador_inHExtra");
+        this.inBonoFijo = document.getElementById("trabajador_inBonoFijo");
         this.btCancelar = document.getElementById("trabajador_btCancelar");
         this.btAceptar = document.getElementById("trabajador_btAceptar");
         const elementoModal = document.getElementById("trabajador");
@@ -24,6 +26,9 @@ export default class vTrabajadorBootstrap {
     }
     get hExtra() {
         return this.inHExtra ? +this.inHExtra.value : 0;
+    }
+    get bonoFijo() {
+        return this.inBonoFijo ? +this.inBonoFijo.value : 0;
     }
     reportar({ nombre, salario }) {
         const reporte = document.createElement("div");
@@ -45,6 +50,7 @@ export default class vTrabajadorBootstrap {
         this.inNombre.value = "";
         this.inHRegular.value = "";
         this.inHExtra.value = "";
+        this.inBonoFijo.value = "";
         this.modal.show();
     }
     ocultar() {

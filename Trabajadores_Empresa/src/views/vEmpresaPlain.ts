@@ -2,6 +2,7 @@ import { iEmpresa } from "../interfaces/iEmpresa.js";
 
 export default class vEmpresaPlain implements iEmpresa {
   private lblMontoNomina: HTMLElement;
+  private lblBonoFijo:HTMLElement;
   private btNuevoTrabajador: HTMLButtonElement;
   private vista: HTMLElement | null;
 
@@ -9,18 +10,16 @@ export default class vEmpresaPlain implements iEmpresa {
     this.vista = document.getElementById("body");
     this.btNuevoTrabajador = document.getElementById("body_btNuevoTrabajador") as HTMLButtonElement;
     this.lblMontoNomina = document.getElementById("body_lblMontoNomina") as HTMLElement;
+    this.lblBonoFijo = document.getElementById("body_lblBonoFijo") as HTMLElement;
   }
 
   onNuevoTrabajador(callback: () => void): void {
     this.btNuevoTrabajador.onclick = callback;
   }
 
-  reportar({ montoNomina }: { montoNomina: number }): void {
-    this.lblMontoNomina.textContent = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-    }).format(montoNomina);
+  reportar({ montoNomina, bonoFijo }: { montoNomina: number, bonoFijo:number }): void {
+    this.lblMontoNomina.textContent = `${montoNomina}`;
+    this.lblBonoFijo.textContent = `${bonoFijo}`
   }
 
   mostrar(): void {

@@ -3,10 +3,12 @@ import mEmpleado from "./mEmpleado.js";
 export default class mEmpresa {
   private contHombres: number = 0;
   private contMujeres: number = 0;
+  private acumSueldos: number = 0;
 
   constructor() {
     this.contHombres = 0;
     this.contMujeres = 0;
+    this.acumSueldos = 0;
   }
 
   procesarEmpleado(empleado: mEmpleado): void {
@@ -15,6 +17,7 @@ export default class mEmpresa {
     } else if (empleado.devolverSexo() === "F") {
       this.contMujeres++;
     }
+    this.acumSueldos += empleado.devolverSueldo();
   }
 
   devolverCantidadHombres(): number {
@@ -23,6 +26,10 @@ export default class mEmpresa {
 
   devolverTotalEmpleados(): number {
     return this.contHombres + this.contMujeres;
+  }
+
+  devolverTotalSueldos(): number {
+    return Math.round(this.acumSueldos * 100) / 100;
   }
 
   calcularPorcentajeMujeres(): number {

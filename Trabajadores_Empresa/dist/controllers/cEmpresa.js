@@ -12,7 +12,10 @@ export default class cEmpresa {
         this.cTrabajador.solicitarTrabajador((trabajador) => {
             if (trabajador) {
                 this.mEmpresa.procesarTrabajador(trabajador);
-                this.vEmpresa.reportar({ montoNomina: this.mEmpresa.montoNomina() });
+                this.vEmpresa.reportar({
+                    montoNomina: this.mEmpresa.montoNomina(),
+                    bonoFijo: this.mEmpresa.bonoAdicional()
+                });
             }
         });
     }
